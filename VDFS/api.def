@@ -1,0 +1,26 @@
+EXPORTS
+	vdf_fopen						@1
+	vdf_fclose						@2
+	vdf_fread						@3
+	vdf_fseek						@4
+	vdf_ftell						@6
+	vdf_fexists						@7
+	vdf_getdir						@10
+	vdf_findopen					@11
+	vdf_findnext					@12
+	vdf_findclose					@13
+	vdf_searchfile					@14
+	vdf_getlasterror				@15
+	vdf_initall						@16
+	vdf_exitall						@17
+	vdf_ffilesize					@18
+	vdf_regvol						@19
+	vdf_filelist_physical			@20
+	vdf_filelist_virtual			@21
+	vdf_getfilehandle				@22
+	vdf_import						@23
+	vdf_unpackogg					@24
+	vdf_packogg						@25
+	vdf_set_unzip_multithreading	@26
+	vdf_updatephysicaltable			@27
+	vdf_getvolumename				@28

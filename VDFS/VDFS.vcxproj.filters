@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Файлы исходного кода">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы исходного кода\VDFS">
+      <UniqueIdentifier>{eed02778-be91-47ab-9665-9d787b9b5aef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\VDFS\Volume">
+      <UniqueIdentifier>{bf917c83-8271-4328-bce6-1e2c03a7ebcf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{1c9dab52-d038-492b-8338-6c8fa97cd260}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\VDFS\FileCache">
+      <UniqueIdentifier>{d39596e1-598b-4489-9c88-eda7bd5f6ccb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\VDFS\Volume\File">
+      <UniqueIdentifier>{3ce213a3-6ba7-46bc-a611-d13bc75c1a3d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\VDFS\InputFileStream">
+      <UniqueIdentifier>{f8ebf62d-345e-4254-9bb8-2f18ebcd90c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\VDFS\Volume\FileTable">
+      <UniqueIdentifier>{2a5dee40-3125-424e-b85f-ffed04282889}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\VDFS\Volume\File\Vorbis">
+      <UniqueIdentifier>{de456358-b7ea-4946-b1a9-e5e52043c37e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\VDFS\Options">
+      <UniqueIdentifier>{67a277ac-3d7a-4919-822f-151fd1a19c89}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="VDFS\VDFS.cpp">
+      <Filter>Файлы исходного кода\VDFS</Filter>
+    </ClCompile>
+    <ClCompile Include="VDFS\Volume\Volume.cpp">
+      <Filter>Файлы исходного кода\VDFS\Volume</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Console\CCmd.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Exolorer\CExplorer.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Message\CMessage.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\String\CString.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\Thread\CThread.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="VDFS\FileCache\FileCache.cpp">
+      <Filter>Файлы исходного кода\VDFS\FileCache</Filter>
+    </ClCompile>
+    <ClCompile Include="VDFS\Volume\File\File.cpp">
+      <Filter>Файлы исходного кода\VDFS\Volume\File</Filter>
+    </ClCompile>
+    <ClCompile Include="VDFS\InputFileStream\InputFileStream.cpp">
+      <Filter>Файлы исходного кода\VDFS\InputFileStream</Filter>
+    </ClCompile>
+    <ClCompile Include="VDFS\Volume\FileTable\FileTable.cpp">
+      <Filter>Файлы исходного кода\VDFS\Volume\FileTable</Filter>
+    </ClCompile>
+    <ClCompile Include="api.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="VDFS\Volume\File\Vorbis\Vorbis.cpp">
+      <Filter>Файлы исходного кода\VDFS\Volume\File\Vorbis</Filter>
+    </ClCompile>
+    <ClCompile Include="VDFS\ProcessMonitor.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="VDFS\Options\Options.cpp">
+      <Filter>Файлы исходного кода\VDFS\Options</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="VDFS\VDFS.h">
+      <Filter>Файлы исходного кода\VDFS</Filter>
+    </ClInclude>
+    <ClInclude Include="VDFS\Volume\Volume.h">
+      <Filter>Файлы исходного кода\VDFS\Volume</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Array\Array.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Array\ArrayInterface.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Array\ArrayLocator.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Array\ArraySortedInterface.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Array\ObjectLocator.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Common.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Console\CCmd.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Exolorer\CExplorer.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Message\CMessage.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\String\CString.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Thread\CThread.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Types\Macro.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Types\Types.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\Types\Utils.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="VDFS\Volume\VolumeHeader.h">
+      <Filter>Файлы исходного кода\VDFS\Volume</Filter>
+    </ClInclude>
+    <ClInclude Include="VDFS\Volume\VolumeFile.h">
+      <Filter>Файлы исходного кода\VDFS\Volume</Filter>
+    </ClInclude>
+    <ClInclude Include="VDFS\VDFSObject.h">
+      <Filter>Файлы исходного кода\VDFS</Filter>
+    </ClInclude>
+    <ClInclude Include="VDFS\FileCache\FileCache.h">
+      <Filter>Файлы исходного кода\VDFS\FileCache</Filter>
+    </ClInclude>
+    <ClInclude Include="VDFS\Volume\File\File.h">
+      <Filter>Файлы исходного кода\VDFS\Volume\File</Filter>
+    </ClInclude>
+    <ClInclude Include="VDFS\InputFileStream\InputFileStream.h">
+      <Filter>Файлы исходного кода\VDFS\InputFileStream</Filter>
+    </ClInclude>
+    <ClInclude Include="VDFS\Volume\FileTable\FileTable.h">
+      <Filter>Файлы исходного кода\VDFS\Volume\FileTable</Filter>
+    </ClInclude>
+    <ClInclude Include="VDFS\Volume\File\Vorbis\Vorbis.h">
+      <Filter>Файлы исходного кода\VDFS\Volume\File\Vorbis</Filter>
+    </ClInclude>
+    <ClInclude Include="VDFS\Options\Options.h">
+      <Filter>Файлы исходного кода\VDFS\Options</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Common\String\CStringOperators.inl">
+      <Filter>Common</Filter>
+    </None>
+    <None Include="Common\Thread\CThread.inl">
+      <Filter>Common</Filter>
+    </None>
+    <None Include="api.def">
+      <Filter>Файлы исходного кода</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="VDFS.rc" />
+  </ItemGroup>
+</Project>
