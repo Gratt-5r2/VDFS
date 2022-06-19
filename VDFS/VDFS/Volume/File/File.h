@@ -29,9 +29,9 @@ namespace VDFS {
     friend class FileStream;
 
     Volume* ContainingVolume;
-    IFILE* BaseFile;
-    string BaseDirectory;
-    string SubDirectory;
+    IFILE* BaseFileHandle;
+    string RootDirectory;
+    string Directory;
     string RealName;
     string FullName;
     string Name;

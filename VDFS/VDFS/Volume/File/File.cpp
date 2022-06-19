@@ -40,7 +40,7 @@ namespace VDFS {
 
   File::File() : VDFSObject() {
     ContainingVolume = Null;
-    BaseFile = Null;
+    BaseFileHandle = Null;
     BasePosition = 0;
     Size = 0;
     Timestamp = 0;
@@ -51,11 +51,11 @@ namespace VDFS {
 
 
   void File::SetBaseFile( IFILE* baseFile ) {
-    if( BaseFile )
-      BaseFile->Close();
+    if( BaseFileHandle )
+      BaseFileHandle->Close();
 
-    BaseFile = baseFile;
-    BaseFile->Open();
+    BaseFileHandle = baseFile;
+    BaseFileHandle->Open();
   }
 
 
@@ -101,7 +101,7 @@ namespace VDFS {
 
 
   void File::CheckAutorun() {
-    string directoryName = SubDirectory.GetFileName();
+    string directoryName = Directory.GetFileName();
     if( directoryName.Compare( "AUTORUN" ) || Name.EndWith( ".PATCH" ) ) {
       if( ContainingVolume && ContainingVolume->GetVolumeName() == "UNION.VDF" )
         if( Name.Compare( "ZPARSEREXTENDER.DLL" ) )
@@ -141,23 +141,23 @@ namespace VDFS {
   FileStream* File::Open() {
     FileStream* stream = Null;
 
-    if( !BaseFile ) {
+    if( !BaseFileHandle ) {
       UpdateSize();
       IFILE* file = IFILE::Open( GetRealName() );
       stream = CreateFileStream( this, file );
       file->Release();
     }
     else
-      stream = CreateFileStream( this, BaseFile );
+      stream = CreateFileStream( this, BaseFileHandle );
 
     return stream;
   }
 
 
   void File::Close() {
-    if( BaseFile )
-      if( BaseFile->Close() == 0 )
-        BaseFile = Null;
+    if( BaseFileHandle )
+      if( BaseFileHandle->Close() == 0 )
+        BaseFileHandle = Null;
   }
 
 
@@ -197,7 +197,7 @@ namespace VDFS {
 
 
   bool File::IsVirtual() const {
-    return BaseFile ? true : false;
+    return BaseFileHandle ? true : false;
   }
 
 
@@ -216,21 +216,21 @@ namespace VDFS {
 
   File* File::Create(
     Volume* volume,
-    const string& subDirectory,
+    const string& directory,
     const string& name,
     const uint& basePosition,
     const uint& size
     ) {
-    File* file  = new File();
-    file->Name         = name;
-    file->SubDirectory = subDirectory.Completion( '\\' );
-    file->FullName     = string::Combine( "%s%s", file->SubDirectory, name );
-    file->RealName     = file->FullName;
-    file->BasePosition = basePosition;
-    file->Size         = size;
-    file->SetBaseFile( volume->GetFile() );
-    file->Timestamp = volume->GetHeader().Timestamp;
+    File* file             = new File();
+    file->Name             = name;
+    file->Directory        = directory.Completion( '\\' );
+    file->FullName         = string::Combine( "%s%s", file->Directory, name );
+    file->RealName         = file->FullName;
+    file->BasePosition     = basePosition;
+    file->Size             = size;
+    file->Timestamp        = volume->GetHeader().Timestamp;
     file->ContainingVolume = volume;
+    file->SetBaseFile( volume->GetFile() );
     file->CheckFakeSystem();
     file->UpdateVersion();
     file->CheckAutorun();
@@ -240,16 +240,16 @@ namespace VDFS {
 
 
   File* File::Create(
-    const string& baseDirectory,
-    const string& subDirectory,
+    const string& rootDirectory,
+    const string& directory,
     const string& name
     ) {
-    File* file = new File();
+    File* file          = new File();
     file->Name          = name.GetUpper();
-    file->BaseDirectory = baseDirectory.GetUpper().Completion( '\\' );
-    file->SubDirectory  = subDirectory .GetUpper().Completion( '\\' );
-    file->FullName      = string::Combine( "%s%s", file->SubDirectory, name );
-    file->RealName      = string::Combine( "%s%s", file->BaseDirectory, file->FullName );
+    file->RootDirectory = rootDirectory.GetUpper().Completion( '\\' );
+    file->Directory     = directory.GetUpper().Completion( '\\' );
+    file->FullName      = string::Combine( "%s%s", file->Directory, name );
+    file->RealName      = string::Combine( "%s%s", file->RootDirectory, file->FullName );
     file->CheckFakeSystem();
     file->CheckAutorun();
     file->CheckWaveFile();
@@ -258,8 +258,8 @@ namespace VDFS {
 
 
   File::~File() {
-    if( BaseFile )
-      BaseFile->Close();
+    if( BaseFileHandle )
+      BaseFileHandle->Close();
     filesInMemory--; // DELETE ME
   }
 
